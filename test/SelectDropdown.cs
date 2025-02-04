@@ -31,6 +31,7 @@ namespace test
         public void test()
         {
             _menu.fillvalue();
+            _menu.Diffrent("Red");
         }
 
         [TearDown]

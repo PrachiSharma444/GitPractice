@@ -23,7 +23,8 @@ namespace test
         IWebElement SelectOne => _driver.FindElement(By.XPath("//div[contains(text() , 'Ms')]"));
         IWebElement SelectOldColorPath => _driver.FindElement(By.XPath("//body/div[@id='app']/div[1]/div[1]/div[1]/div[2]/div[2]/div[6]/div[1]/div[1]/Select[@id='oldSelectMenu']"));
 
-        IWebElement SelectColor => _driver.FindElement(By.XPath("//option[contains(text(),'Black')]"));         
+        IWebElement SelectColor => _driver.FindElement(By.XPath("//option[contains(text(),'Black')]"));
+        IWebElement diffColour => _driver.FindElement(By.Id("react-select-4-input"));
 
 
         public void fillvalue()
@@ -37,7 +38,11 @@ namespace test
 
 
         }
-
+        public void Diffrent(string colours)
+        {
+            diffColour.SendKeys(colours);
+            diffColour.SendKeys(Keys.Enter);
+        }
 
         public void ClickElement(IWebElement element, int TimeOutInSeconds = 30)
         {
