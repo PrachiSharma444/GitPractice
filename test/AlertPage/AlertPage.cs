@@ -11,13 +11,14 @@ namespace test.DropdownPage
     {
         private readonly IWebDriver driver;
 
+
         public AlertPage(IWebDriver driver)
         {
             this.driver = driver;
         }
 
         IWebElement button => driver.FindElement(By.Id("alertButton"));
-        IWebElement prompt => driver.FindElement(By.Id("promtButton"));
+        IWebElement prompt => driver.FindElement(By.Id("abc"));
 
         public void ClickButton()
         {
