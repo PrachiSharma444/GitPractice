@@ -17,6 +17,7 @@ namespace test.DropdownPage
         }
 
         IWebElement button => driver.FindElement(By.Id("alertButton"));
+        IWebElement prompt => driver.FindElement(By.Id("promtButton"));
 
         public void ClickButton()
         {
@@ -26,7 +27,16 @@ namespace test.DropdownPage
             Assert.AreEqual("You clicked a button" , alert.Text);
             alert.Accept();
         }
-
+        public void ClickPromt()
+        {
+            ClickElement(prompt);
+            IAlert promtalert = driver.SwitchTo().Alert();
+            promtalert.SendKeys("prachi");
+            //or you can use Assert.True also
+            Assert.IsTrue(promtalert.Text.Contains("prachi"));
+            Thread.Sleep(2000);
+            promtalert.Accept();
+        }
         public void ClickElement(IWebElement ele)
         {
             ele.Click();

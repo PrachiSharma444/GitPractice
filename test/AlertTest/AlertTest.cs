@@ -21,19 +21,25 @@ namespace test.DropdownTest
             driver.Manage().Window.Maximize();
             driver.Navigate().GoToUrl("https://demoqa.com/alerts");
             alertpage = new AlertPage(driver);
-
+            ScrollDown(300);
         }
 
         [Test]
         public void test()
         {
-            alertpage.ClickButton();
+            //alertpage.ClickButton();
+            alertpage.ClickPromt();
         }
 
         [TearDown]
         public void tearDown()
         {
             driver.Quit();
+        }
+        public void ScrollDown(int yOffset)
+        {
+            IJavaScriptExecutor js = (IJavaScriptExecutor)driver;
+            js.ExecuteScript($"window.scrollBy(0,{yOffset})");
         }
     }
 }
