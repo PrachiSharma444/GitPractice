@@ -27,7 +27,7 @@ namespace test.DropdownTest
         [Test]
         public void test()
         {
-            //alertpage.ClickButton();
+            alertpage.ClickButton();
             alertpage.ClickPromt();
         }
 
