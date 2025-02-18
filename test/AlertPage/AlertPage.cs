@@ -33,12 +33,13 @@ namespace test.DropdownPage
         {
             ClickElement(prompt);
             IAlert promtalert = driver.SwitchTo().Alert();
+            
             promtalert.SendKeys("prachi");
-            Thread.Sleep(2000);
-            //or you can use Assert.True also
-            Assert.IsTrue(promtalert.Text.Contains("prachi"));
+           
             Thread.Sleep(2000);
             promtalert.Accept();
+            string resultText = driver.FindElement(By.Id("promptResult")).Text;
+            Assert.IsTrue(resultText.Contains("prachi"));
         }
         public void ClickConfirm()
         {
