@@ -28,7 +28,8 @@ namespace test.DropdownTest
         public void test()
         {
             alertpage.ClickButton();
-            alertpage.ClickPromt();
+            //alertpage.ClickPromt();
+            alertpage.ClickConfirm();
         }
 
         [TearDown]

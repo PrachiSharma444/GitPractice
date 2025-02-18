@@ -18,7 +18,8 @@ namespace test.DropdownPage
         }
 
         IWebElement button => driver.FindElement(By.Id("alertButton"));
-        IWebElement prompt => driver.FindElement(By.Id("abc"));
+        IWebElement prompt => driver.FindElement(By.Id("promtButton"));
+        IWebElement confirm => driver.FindElement(By.Id("confirmButton"));
 
         public void ClickButton()
         {
@@ -38,6 +39,12 @@ namespace test.DropdownPage
             Assert.IsTrue(promtalert.Text.Contains("prachi"));
             Thread.Sleep(2000);
             promtalert.Accept();
+        }
+        public void ClickConfirm()
+        {
+            ClickElement(confirm);
+            IAlert confirmAlert = driver.SwitchTo().Alert();
+            confirmAlert.Accept();
         }
         public void ClickElement(IWebElement ele)
         {
